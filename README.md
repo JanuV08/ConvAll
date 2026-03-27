@@ -1,4 +1,4 @@
 # ConvAll
-Tento program je schopny prevest jakou kolik jednotku, třeba kilometry na metry atd.
+Tento program je schopny prevest jakou kolik jednotku.
 
 WORK IN PROGRESS
