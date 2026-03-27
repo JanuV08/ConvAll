@@ -28,10 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             comboBox1 = new ComboBox();
             pnlVaha = new Panel();
+            button1 = new Button();
             textVystupVah = new TextBox();
             comVahVstup = new ComboBox();
             comVahVystup = new ComboBox();
@@ -45,14 +44,11 @@
             label1 = new Label();
             label3 = new Label();
             label4 = new Label();
-            notifyIcon1 = new NotifyIcon(components);
-            contextMenuStrip1 = new ContextMenuStrip(components);
-            ukoncitToolStripMenuItem = new ToolStripMenuItem();
+            button2 = new Button();
             pnlVaha.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numVaha).BeginInit();
             pnlVzdalenost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numVzda).BeginInit();
-            contextMenuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // comboBox1
@@ -70,20 +66,31 @@
             // 
             pnlVaha.Anchor = AnchorStyles.None;
             pnlVaha.BackColor = Color.SteelBlue;
+            pnlVaha.Controls.Add(button1);
             pnlVaha.Controls.Add(textVystupVah);
             pnlVaha.Controls.Add(comVahVstup);
             pnlVaha.Controls.Add(comVahVystup);
             pnlVaha.Controls.Add(label2);
             pnlVaha.Controls.Add(numVaha);
-            pnlVaha.Location = new Point(50, 306);
+            pnlVaha.Location = new Point(50, 250);
             pnlVaha.Name = "pnlVaha";
-            pnlVaha.Size = new Size(300, 100);
+            pnlVaha.Size = new Size(300, 125);
             pnlVaha.TabIndex = 1;
             pnlVaha.Visible = false;
             // 
+            // button1
+            // 
+            button1.Image = Properties.Resources.switch_3;
+            button1.Location = new Point(267, 55);
+            button1.Name = "button1";
+            button1.Size = new Size(28, 25);
+            button1.TabIndex = 7;
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // textVystupVah
             // 
-            textVystupVah.Location = new Point(10, 60);
+            textVystupVah.Location = new Point(10, 85);
             textVystupVah.Name = "textVystupVah";
             textVystupVah.ReadOnly = true;
             textVystupVah.Size = new Size(150, 23);
@@ -103,7 +110,7 @@
             // 
             comVahVystup.FormattingEnabled = true;
             comVahVystup.Items.AddRange(new object[] { "kilogram (kg)", "gram (g)", "libra (lb)", "tuna (t)", "dekagram (dag)", "miligram (mg)", "metrický cent (q)", "unce (oz)" });
-            comVahVystup.Location = new Point(180, 60);
+            comVahVystup.Location = new Point(180, 85);
             comVahVystup.Name = "comVahVystup";
             comVahVystup.Size = new Size(115, 23);
             comVahVystup.TabIndex = 3;
@@ -134,20 +141,21 @@
             // 
             pnlVzdalenost.Anchor = AnchorStyles.None;
             pnlVzdalenost.BackColor = Color.SteelBlue;
+            pnlVzdalenost.Controls.Add(button2);
             pnlVzdalenost.Controls.Add(textVystupVzda);
             pnlVzdalenost.Controls.Add(numVzda);
             pnlVzdalenost.Controls.Add(comVzdaVstup);
             pnlVzdalenost.Controls.Add(comVzdaVystup);
             pnlVzdalenost.Controls.Add(label1);
-            pnlVzdalenost.Location = new Point(50, 200);
+            pnlVzdalenost.Location = new Point(50, 250);
             pnlVzdalenost.Name = "pnlVzdalenost";
-            pnlVzdalenost.Size = new Size(300, 100);
+            pnlVzdalenost.Size = new Size(300, 125);
             pnlVzdalenost.TabIndex = 3;
             pnlVzdalenost.Visible = false;
             // 
             // textVystupVzda
             // 
-            textVystupVzda.Location = new Point(10, 60);
+            textVystupVzda.Location = new Point(10, 85);
             textVystupVzda.Name = "textVystupVzda";
             textVystupVzda.ReadOnly = true;
             textVystupVzda.Size = new Size(150, 23);
@@ -178,7 +186,7 @@
             // 
             comVzdaVystup.FormattingEnabled = true;
             comVzdaVystup.Items.AddRange(new object[] { "metr (m)", "centimetr (cm)", "palec (in)", "milimetr (mm)", "stopa (ft)", "decimetr (dm)", "kilometr (km)", "míle (mi)", "yard (yd)" });
-            comVzdaVystup.Location = new Point(180, 60);
+            comVzdaVystup.Location = new Point(180, 85);
             comVzdaVystup.Name = "comVzdaVystup";
             comVzdaVystup.Size = new Size(115, 23);
             comVzdaVystup.TabIndex = 8;
@@ -215,25 +223,14 @@
             label4.TabIndex = 5;
             label4.Text = "Vyberte moznost";
             // 
-            // notifyIcon1
+            // button2
             // 
-            notifyIcon1.ContextMenuStrip = contextMenuStrip1;
-            notifyIcon1.Icon = (Icon)resources.GetObject("notifyIcon1.Icon");
-            notifyIcon1.Text = "notifyIcon1";
-            notifyIcon1.Visible = true;
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { ukoncitToolStripMenuItem });
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(116, 26);
-            // 
-            // ukoncitToolStripMenuItem
-            // 
-            ukoncitToolStripMenuItem.Name = "ukoncitToolStripMenuItem";
-            ukoncitToolStripMenuItem.Size = new Size(115, 22);
-            ukoncitToolStripMenuItem.Text = "Ukoncit";
-            ukoncitToolStripMenuItem.Click += ukoncitToolStripMenuItem_Click;
+            button2.Image = Properties.Resources.switch_3;
+            button2.Location = new Point(267, 54);
+            button2.Name = "button2";
+            button2.Size = new Size(28, 25);
+            button2.TabIndex = 8;
+            button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -247,7 +244,6 @@
             Controls.Add(pnlVzdalenost);
             Name = "Form1";
             Text = "Form1";
-            FormClosing += Form1_FormClosing;
             Load += Form1_Load;
             pnlVaha.ResumeLayout(false);
             pnlVaha.PerformLayout();
@@ -255,7 +251,6 @@
             pnlVzdalenost.ResumeLayout(false);
             pnlVzdalenost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numVzda).EndInit();
-            contextMenuStrip1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }
@@ -277,8 +272,7 @@
         private ComboBox comVzdaVstup;
         private Label label3;
         private Label label4;
-        private NotifyIcon notifyIcon1;
-        private ContextMenuStrip contextMenuStrip1;
-        private ToolStripMenuItem ukoncitToolStripMenuItem;
+        private Button button1;
+        private Button button2;
     }
 }

@@ -4,49 +4,6 @@ namespace ConvAll
 {
     public partial class Form1 : Form
     {
-        protected override void WndProc(ref Message m)
-        {
-            base.WndProc(ref m);
-
-            if (m.Msg == 0x0312)
-            {
-                if (this.Visible)
-                {
-                    this.Hide();
-                }
-                else
-                {
-                    this.Show();
-                    this.WindowState = FormWindowState.Normal;
-                    this.Activate();
-                }
-            }
-        }
-
-        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                e.Cancel = true; // Zrušíme příkaz k vypnutí
-                this.Hide();     // Jen schováme okno
-            }
-        }
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vk);
-
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
-        private static extern bool UnregisterHotKey(IntPtr hWnd, int id);
-
-        // Definice kláves (Modifikátory)
-        enum KeyModifier
-        {
-            None = 0,
-            Alt = 1,
-            Control = 2,
-            Shift = 4,
-            WinKey = 8
-        }
         public Form1()
         {
             InitializeComponent();
@@ -77,7 +34,7 @@ namespace ConvAll
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBox1.SelectedIndex = 0;
-            RegisterHotKey(this.Handle, 1, (int)KeyModifier.Control + (int)KeyModifier.Shift, 0x51);
+
         }
 
         private void numVaha_ValueChanged(object sender, EventArgs e)
@@ -335,9 +292,12 @@ namespace ConvAll
             textVystupVzda.Text = vystup.ToString("G10");
         }
 
-        private void ukoncitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            int pomocna = comVahVstup.SelectedIndex;
+            comVahVstup.SelectedIndex = comVahVystup.SelectedIndex;
+            comVahVystup.SelectedIndex = pomocna;
+
         }
     }
 }
